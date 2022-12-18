@@ -26,3 +26,6 @@ require __DIR__ .'/customer.php';
 
 /* Product Routings */
 require __DIR__ .'/product.php';
+
+/* Free issues Routings */
+require __DIR__ .'/freeissue.php';

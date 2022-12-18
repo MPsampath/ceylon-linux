@@ -45,7 +45,7 @@
                                 </li>
                                 
                                 <li class="nav-item">
-                                    <a class="nav-link" >Free Issues</a>
+                                    <a class="nav-link" href="{{route('free_issue_home')}}" >Free Issues</a>
                                 </li>
                     </ul>
 
