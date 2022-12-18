@@ -47,6 +47,11 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{route('free_issue_home')}}" >Free Issues</a>
                                 </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{route('place_order_home')}}" >Place Order</a>
+                                </li>
+                                
                     </ul>
 
                     <!-- Right Side Of Navbar -->
