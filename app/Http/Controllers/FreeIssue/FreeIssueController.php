@@ -50,8 +50,8 @@ class FreeIssueController extends Controller
 
             }
             
-            $DangMessage =["alert"=>['type'=>'danger' ,"mssg" =>"User create unsuccesfull", "burl"=>'Freeissuehome']];
-            $SucsMessage = ["alert"=>['type'=>'success' , "mssg" =>"User Create SuccsessFull", "burl"=>'Freeissuehome']];
+            $DangMessage =["alert"=>['type'=>'danger' ,"mssg" =>"Free Issue create unsuccesfull", "burl"=>'FreeissueCreate']];
+            $SucsMessage = ["alert"=>['type'=>'success' , "mssg" =>"Free Issue Create SuccsessFull", "burl"=>'FreeissueCreate']];
             return redirect()->back()->with($SucsMessage);
         } catch (\Throwable $th) {
             dd($th);
@@ -67,10 +67,10 @@ class FreeIssueController extends Controller
                 'freeisueData'=>$freeisueData,
             ]);
         } catch (QueryException $e) {
-            $DangAdminMessage = ["alert" => ['type' => 'danger', "mssg" => "Some Error" . 'RMAA:000', "burl" => 'Custhome']];
+            $DangAdminMessage = ["alert" => ['type' => 'danger', "mssg" => "Some Error" . 'RMAA:000', "burl" => 'Freeissuehome']];
             return redirect()->back()->with($DangAdminMessage);
         } catch (\Exception $e) {
-            $DangAdminMessage = ["alert" => ['type' => 'danger', "mssg" => "Some Error" . 'RMAA:000', "burl" => 'Custhome']];
+            $DangAdminMessage = ["alert" => ['type' => 'danger', "mssg" => "Some Error" . 'RMAA:000', "burl" => 'Freeissuehome']];
             return redirect()->back()->with($DangAdminMessage);
         }
     }
@@ -85,10 +85,10 @@ class FreeIssueController extends Controller
                 'products' => $products,
             ]);
         } catch (QueryException $e) {
-            $DangAdminMessage = ["alert" => ['type' => 'danger', "mssg" => "Some Error" . 'RMAA:000', "burl" => 'Custhome']];
+            $DangAdminMessage = ["alert" => ['type' => 'danger', "mssg" => "Some Error" . 'RMAA:000', "burl" => 'Freeissuehome']];
             return redirect()->back()->with($DangAdminMessage);
         } catch (\Exception $e) {
-            $DangAdminMessage = ["alert" => ['type' => 'danger', "mssg" => "Some Error" . 'RMAA:000', "burl" => 'Custhome']];
+            $DangAdminMessage = ["alert" => ['type' => 'danger', "mssg" => "Some Error" . 'RMAA:000', "burl" => 'Freeissuehome']];
             return redirect()->back()->with($DangAdminMessage);
         }
     }
@@ -104,8 +104,8 @@ class FreeIssueController extends Controller
 
             }
             
-            $DangMessage =["alert"=>['type'=>'danger' ,"mssg" =>"User create unsuccesfull", "burl"=>'Freeissuehome']];
-            $SucsMessage = ["alert"=>['type'=>'success' , "mssg" =>"User Create SuccsessFull", "burl"=>'Freeissuehome']];
+            $DangMessage =["alert"=>['type'=>'danger' ,"mssg" =>"Free Issue update unsuccesfull", "burl"=>'FreeissueEdit']];
+            $SucsMessage = ["alert"=>['type'=>'success' , "mssg" =>"Free Issue update SuccsessFull", "burl"=>'FreeissueEdit']];
             return redirect()->back()->with($SucsMessage);
         } catch (\Throwable $th) {
             return redirect()->back()->with($DangMessage);

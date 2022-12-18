@@ -34,10 +34,10 @@ class ProductController extends Controller
                 'today' => $today
             ]);
         } catch (QueryException $e) {
-            $DangAdminMessage = ["alert" => ['type' => 'danger', "mssg" => "Some Error" . 'RMAA:000', "burl" => 'Custhome']];
+            $DangAdminMessage = ["alert" => ['type' => 'danger', "mssg" => "Some Error" . 'RMAA:000', "burl" => 'Prodcthome']];
             return redirect()->back()->with($DangAdminMessage);
         } catch (\Exception $e) {
-            $DangAdminMessage = ["alert" => ['type' => 'danger', "mssg" => "Some Error" . 'RMAA:000', "burl" => 'Custhome']];
+            $DangAdminMessage = ["alert" => ['type' => 'danger', "mssg" => "Some Error" . 'RMAA:000', "burl" => 'Prodcthome']];
             return redirect()->back()->with($DangAdminMessage);
         }
     }
@@ -53,8 +53,8 @@ class ProductController extends Controller
 
             }
             
-            $DangMessage =["alert"=>['type'=>'danger' ,"mssg" =>"User create unsuccesfull", "burl"=>'Prodcthome']];
-            $SucsMessage = ["alert"=>['type'=>'success' , "mssg" =>"User Create SuccsessFull", "burl"=>'Prodcthome']];
+            $DangMessage =["alert"=>['type'=>'danger' ,"mssg" =>"Product create unsuccesfull", "burl"=>'ProdctCreate']];
+            $SucsMessage = ["alert"=>['type'=>'success' , "mssg" =>"Product Create SuccsessFull", "burl"=>'ProdctCreate']];
             return redirect()->back()->with($SucsMessage);
         } catch (\Throwable $th) {
             return redirect()->back()->with($DangMessage);
@@ -71,10 +71,10 @@ class ProductController extends Controller
                 'productData'=>$productData,
             ]);
         } catch (QueryException $e) {
-            $DangAdminMessage = ["alert" => ['type' => 'danger', "mssg" => "Some Error" . 'RMAA:000', "burl" => 'Custhome']];
+            $DangAdminMessage = ["alert" => ['type' => 'danger', "mssg" => "Some Error" . 'RMAA:000', "burl" => 'Prodcthome']];
             return redirect()->back()->with($DangAdminMessage);
         } catch (\Exception $e) {
-            $DangAdminMessage = ["alert" => ['type' => 'danger', "mssg" => "Some Error" . 'RMAA:000', "burl" => 'Custhome']];
+            $DangAdminMessage = ["alert" => ['type' => 'danger', "mssg" => "Some Error" . 'RMAA:000', "burl" => 'Prodcthome']];
             return redirect()->back()->with($DangAdminMessage);
         }
     }
@@ -87,10 +87,10 @@ class ProductController extends Controller
                 'productData'=>$productData,
             ]);
         } catch (QueryException $e) {
-            $DangAdminMessage = ["alert" => ['type' => 'danger', "mssg" => "Some Error" . 'RMAA:000', "burl" => 'Custhome']];
+            $DangAdminMessage = ["alert" => ['type' => 'danger', "mssg" => "Some Error" . 'RMAA:000', "burl" => 'Prodcthome']];
             return redirect()->back()->with($DangAdminMessage);
         } catch (\Exception $e) {
-            $DangAdminMessage = ["alert" => ['type' => 'danger', "mssg" => "Some Error" . 'RMAA:000', "burl" => 'Custhome']];
+            $DangAdminMessage = ["alert" => ['type' => 'danger', "mssg" => "Some Error" . 'RMAA:000', "burl" => 'Prodcthome']];
             return redirect()->back()->with($DangAdminMessage);
         }
     }
@@ -106,8 +106,8 @@ class ProductController extends Controller
 
             }
             
-            $DangMessage =["alert"=>['type'=>'danger' ,"mssg" =>"User update unsuccesfull", "burl"=>'CustEdit']];
-            $SucsMessage = ["alert"=>['type'=>'success' , "mssg" =>"User update SuccsessFull", "burl"=>'CustEdit']];
+            $DangMessage =["alert"=>['type'=>'danger' ,"mssg" =>"Product update unsuccesfull", "burl"=>'ProdctEdit']];
+            $SucsMessage = ["alert"=>['type'=>'success' , "mssg" =>"Product update SuccsessFull", "burl"=>'ProdctEdit']];
             return redirect()->back()->with($SucsMessage);
         } catch (\Throwable $th) {
             dd($th);
