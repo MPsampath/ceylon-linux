@@ -16,3 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+/* Customer Routings */
+require __DIR__ .'/customer.php';
+
+/* Product Routings */
+require __DIR__ .'/product.php';
