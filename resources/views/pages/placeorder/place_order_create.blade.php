@@ -4,7 +4,7 @@
 
 @endsection
 @section('Component-Home-Action',route('place_order_home'))
-@section('content-form-action',route('product_store'))
+@section('content-form-action',route('place_order_store'))
 <!-- Page Action Buttons -->
 @section('page-action-buttons')
 <a type="button" name="save" id="save" class="btn btn-success waves-effect waves-light"><i class="mdi mdi-floppy me-1"></i> Save</a>
@@ -59,28 +59,30 @@
                 </div>
                 </th>
                 <th class="text-left">
-                        <select class="form-control form-control-sm selectpicker" id="product" name="product">
+                    <div>
+                        <select class="form-control form-control-sm tableselect" id="product" name="product">
                             <option value="" ></option>
                             @if(!empty($products))
                                 @foreach ($products as $item)
-                                    <option value="{{$item->proId}}" >{{$item->proNam}}</option>
+                                    <option value="{{$item->proId}}" data-cost="{{$item->cost}}" data-code="{{$item->code}}" data-prname="{{$item->proNam}}" data-free="{{$item->freeIssue}}" >{{$item->proNam}}</option>
                                 @endforeach
                             @endif
                         </select>
+                    </div>
                 </th>
-                <th class="text-left procode">
+                <td class="text-left procode">
 
-                </th>
-                <th class="text-end price">
+                </td>
+                <td class="text-end price">
 
-                </th>
+                </td>
                 <th class="text-end" style="width: 200px;">
-                        <input class="form-control form-control-sm integer" type="text" id="quntity" name="quntity" value="">
+                        <input class="form-control form-control-sm integer tablefeilds" type="text" id="quntity" name="quntity" value="">
                 </th>
-                <th class="text-end free">
-                </th>
-                <th class="text-end amount">
-                </th>
+                <td class="text-end free">
+                </td>
+                <td class="text-end amount">
+                </td>
             </tr>
         </thead>
         <tbody id="body">
@@ -90,7 +92,9 @@
     </tfoot>
     </table>
     </div>
-    <div class="col-12 col-sm-1 col-lg-1"></div>
+    <div class="col-12 col-sm-1 col-lg-1">
+    <input type="hidden" name="productArray" id="productArray"  value=""/>
+    </div>
 </div>
 
 @endsection

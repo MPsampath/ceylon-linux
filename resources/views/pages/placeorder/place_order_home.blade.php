@@ -23,29 +23,26 @@
                         <th>Order Date</th>
                         <th>Order Time</th>
                         <th>Net Amount</th>
-                        <th class="text-end">Actions</th>
+                        <th class="text-end" style="width: 200px;">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     @if(count($homedata) > 0)
-                            @php
-                                $number = 0;
-                            @endphp
                         @foreach ($homedata as $freis)
                                 <tr>
-                                    <td>{{++$number.'.'}}</td>
-                                    <td>{{$freis->lable}}</td>
-                                    <td>{{$freis->type}}</td>
-                                    <td>{{$freis->purchsProd}}</td>
-                                    <td>{{$freis->freeProd}}</td>
-                                    <td class="text-end">
+                                    <td>{{$freis->ordernum}}</td>
+                                    <td>{{$freis->custnm}}</td>
+                                    <td>{{$freis->orderdate}}</td>
+                                    <td>{{$freis->ordertime}}</td>
+                                    <td>{{$freis->netammount}}</td>
+                                    <td class="text-end" style="width: 200px;">
                                         <div class="btn-group p-2">
-                                            <button type="button" data-friid="{{$freis->friId}}" class="btn btn-success preview">Preview</button>
+                                            <button type="button" data-poid="{{$freis->poId}}" class="btn btn-success preview">Preview</button>
                                             <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <span class="sr-only">Toggle Dropdown</span>
                                             </button>
                                             <div class="dropdown-menu" style="min-width: 115px;max-width: 115px;">
-                                                <a class="dropdown-item edit" data-friid="{{$freis->friId}}"  href="#">Edit</a>
+                                                <a class="dropdown-item edit" data-poid="{{$freis->poId}}"  href="#">Edit</a>
                                             </div>
                                         </div>
 

@@ -47,4 +47,16 @@ class Products extends Model
             return false;
         }
     }
+
+    static function getProductWithFreeIssue(){
+        $products = Products::selectRaw('pri,pri AS proId, prn AS proNam, prc AS code, cst AS cost, exd AS expdt')
+                    ->with(['freeIssue'])->get();
+        return $products;
+    }
+
+    function freeIssue(){
+        return $this->hasOne(FreeIssues::class, 'ppi', 'pri')
+                        ->selectRaw('free_issues.*, a.prn AS freePro, IF(free_issues.typ = 1,"Flat","Multiple") AS type')
+                        ->leftjoin('products AS a','a.pri','fpi');
+    }
 }

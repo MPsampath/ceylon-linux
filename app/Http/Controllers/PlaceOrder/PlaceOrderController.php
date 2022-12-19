@@ -31,7 +31,7 @@ class PlaceOrderController extends Controller
         try {
             $number = random_number(4,[]);
             $customers = Customer::allCustomers();
-            $products = Products::allProducts();
+            $products = Products::getProductWithFreeIssue();
             return view('pages.placeorder.place_order_create')->with([
                 'ordcode'=>$number,
                 'customers'=>$customers,
@@ -49,7 +49,10 @@ class PlaceOrderController extends Controller
     public function store(Request $request)
     {
         try {
-            $product = Products::newSave($request->pronam,$request->procod,$request->price, $request->expdat);
+            $today = date('Y-m-d');
+            $time = date("h:i:s");
+            $itemArray = json_decode($request->productArray);
+            $product = PlaceOrder::newSave($request->ordnum,$request->customr,$today, $time,$itemArray);
 
             if(!$product){
                 throw new ErrorException('New Produt Save Fail');
@@ -57,10 +60,11 @@ class PlaceOrderController extends Controller
 
             }
             
-            $DangMessage =["alert"=>['type'=>'danger' ,"mssg" =>"Product create unsuccesfull", "burl"=>'ProdctCreate']];
-            $SucsMessage = ["alert"=>['type'=>'success' , "mssg" =>"Product Create SuccsessFull", "burl"=>'ProdctCreate']];
+            $DangMessage =["alert"=>['type'=>'danger' ,"mssg" =>"Product create unsuccesfull", "burl"=>'PlcOrdrCreate']];
+            $SucsMessage = ["alert"=>['type'=>'success' , "mssg" =>"Product Create SuccsessFull", "burl"=>'PlcOrdrCreate']];
             return redirect()->back()->with($SucsMessage);
         } catch (\Throwable $th) {
+            dd($th);
             return redirect()->back()->with($DangMessage);
         }
     }
