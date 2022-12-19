@@ -4,7 +4,7 @@
 
 @endsection
 @section('Component-Home-Action',route('place_order_home'))
-@section('content-form-action',route('place_order_store'))
+@section('content-form-action',route('product_store'))
 <!-- Page Action Buttons -->
 @section('page-action-buttons')
 <a type="button" name="save" id="save" class="btn btn-success waves-effect waves-light"><i class="mdi mdi-floppy me-1"></i> Save</a>
@@ -36,7 +36,7 @@
             </div>
         </div>
     </div>
-   
+
 </div>
 <div class="row">
     <div class="col-12 col-sm-1 col-lg-1"></div>
@@ -69,10 +69,10 @@
                         </select>
                 </th>
                 <th class="text-left procode">
-                       
+
                 </th>
                 <th class="text-end price">
-                     
+
                 </th>
                 <th class="text-end" style="width: 200px;">
                         <input class="form-control form-control-sm integer" type="text" id="quntity" name="quntity" value="">

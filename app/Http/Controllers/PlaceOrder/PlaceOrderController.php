@@ -19,7 +19,7 @@ class PlaceOrderController extends Controller
         return view('pages.placeorder.place_order_home')->with([
             'homedata'=>  $homedata,
         ]);
-            
+
         } catch (\Throwable $th) {
             dd($th);
         }
@@ -46,7 +46,7 @@ class PlaceOrderController extends Controller
         }
     }
 
-  
+
 }
 
 
