@@ -60,7 +60,8 @@
 @section('home-js')
 <!-- Define variables -->
 <script type="text/javascript">
-
+var place_order_preview = "{{route('place_order_preview')}}";
+var place_order_edit = "{{route('place_order_edit')}}";
 </script>
 
 <script src="{{url('assets/js/blade/placeorder/place_order_home.js')}}"></script>
