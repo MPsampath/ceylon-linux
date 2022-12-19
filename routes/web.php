@@ -18,7 +18,6 @@ Route::get('/',[PlaceOrderController::class,'home']);
 
 // Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 /* Customer Routings */
 require __DIR__ .'/customer.php';
